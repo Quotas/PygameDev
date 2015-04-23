@@ -14,9 +14,9 @@ class GenLevel(object):
         self.map_width = MAP_WIDTH
         self.rooms = []
         self.level_layout = []
-
-
-
+        self.neighbour_nodes = []
+        self.create_rooms()
+        self.getNeighbourNodes()
 
     def create_rooms(self):
         for r in range(0, self.max_rooms):
@@ -34,5 +34,22 @@ class GenLevel(object):
             if not failed:
                 self.level_layout.append(pygame.Rect(x, y, w, h))
             self.rooms.append(new_room)
+
+    def newNeighbourNode(self, node_a, node_b):
+        self.neighbour_nodes.append(node_a)
+        self.neighbour_nodes.append(node_b)
+
+    def getNeighbourNodes(self):
+        for i in range(0, len(self.level_layout)):
+            if i + 2 < len(self.level_layout):
+                node_a = self.level_layout[i]
+                node_b = self.level_layout[i + 1]
+                node_c = self.level_layout[i + 2]
+                if (node_a.x - node_b.x) > (node_b.x - node_c.x):
+                    self.newNeighbourNode(node_b, node_c)
+                else:
+                    self.newNeighbourNode(node_a, node_b)
+            else:
+                break
 
 

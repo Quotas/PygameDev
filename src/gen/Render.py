@@ -1,5 +1,6 @@
 import pygame
 from src.gen.GenLevel import GenLevel
+from src.gen.Screen import Screen
 
 pygame.init()
 from src.gen.GenerateLevel import *
@@ -7,12 +8,12 @@ from src.gen.GenerateLevel import *
 
 class Render(object):
     def __init__(self):
-        self.Level = GenLevel(60, 85, 30, 800, 600)
+        self.Level = GenLevel(60, 85, 20, 800, 600)
+        self.pixel_data_buffer = Screen(600, 800)
         self.game_window = pygame.display.set_mode((600, 800))
-        self.white = pygame.Color(255, 255, 255, 0)
-        self.Level.create_rooms()
 
     def render(self):
-        for i in range(0, len(self.Level.level_layout)):
-            self.game_window.fill(self.white, self.Level.level_layout[i])
-        pygame.display.flip()
+        self.pixel_data_buffer.clear()
+        self.pixel_data_buffer.render()
+        self.game_window.blit(self.pixel_data_buffer.image, (0, 0))
+
