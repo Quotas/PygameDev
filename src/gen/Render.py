@@ -1,9 +1,8 @@
 import pygame
-from src.gen.GenLevel import GenLevel
-from src.gen.Screen import Screen
+from GenLevel import GenLevel
+from Screen import Screen
+from GenerateLevel import *
 
-pygame.init()
-from src.gen.GenerateLevel import *
 
 
 class Render(object):

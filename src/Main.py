@@ -1,10 +1,10 @@
-from src.gen.Render import *
+from gen.Render import *
 
 scene = Render()
-
+pygame.init()
 
 def main():
-    pygame.init()
+
     while True:
         scene.render()
         pygame.display.update()
