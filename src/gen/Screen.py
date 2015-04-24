@@ -15,14 +15,14 @@ class Screen(object):
 
 
     def render(self):
-        pixels = pygame.PixelArray(self.image)
+        pixels = pygame.surface.array2d(self.image)
         for y in range(0, self.height):
             yy = y
             for x in range(0, self.width):
                 xx = x
                 tileIndex = ((xx >> 3) & 63) + ((yy >> 3) & 63) * 64
                 pixels[x, y] = self.tiles[tileIndex]
-        self.image = pixels.make_surface()
+        del pixels
 
 
     def clear(self):
