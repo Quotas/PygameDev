@@ -5,7 +5,7 @@ from Screen import Screen
 
 class Render(object):
     def __init__(self):
-        self.Level = GenLevel(30, 50)
+        self.Level = GenLevel(51, 31, 5)
 
 
 
