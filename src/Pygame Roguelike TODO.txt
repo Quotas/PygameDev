@@ -1,0 +1,32 @@
+GAME:
+2D Top down -> Isometric 3D
+Type - Roguelike
+Setting - Samurai theme with enemies as yaoki?
+Input - Arrow Keys
+Combat - trying to occupy the location of a monster atuomatically starts combat
+
+-Turnbased but if you move then monsters move but if you are not moving monsters dont move
+-Randomly generated items that can have prefixes and suffixes that modify the base items so like Casters dagger of Chilling
+-Skill system like the civ science tree 
+randomly generated  base skills that progress via a skill system from a list of possible skills when you start the game
+
+ENGINE:
+SpiteSheet -> Sprite -> Tile
+LevelGen -> LevelMap -> TileMap -> PixelDataArray-> Renderer
+Handle SpriteSheets
+Handle tiles as sprites 
+store level in a TileMap
+Do per pixel rendering with a TileMap as reference
+get the level data as a PixelDataArray
+generate the levels procedurally
+levels should be a series of randomly sized rooms with doors generated where they connect (Think binding of issac) 
+write an event handler and a state handler for game states and events
+
+ART:
+
+?
+
+ASSESTS (SOUND?):
+
+?
+

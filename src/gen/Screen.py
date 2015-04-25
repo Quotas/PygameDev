@@ -1,28 +1,22 @@
 import pygame
 from random import randrange
+import numpy as np
+
 
 class Screen(object):
-
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.image = pygame.Surface((width, height))
-        self.tiles = [None] * (64 * 64)
+        self.image = np.zeros((width, height)).astype(np.uint32)
+        self.tiles = np.random.randint(0, 255 ** 3, 64 * 64)
 
-        for i in range(0, len(self.tiles)):
-            self.tiles[i] = randrange(0, int("0xffffff", 16))
-
-
-
-    def render(self):
-        pixels = pygame.PixelArray(self.image)
+    def create_tile_map(self):
         for y in range(0, self.height):
             yy = y
             for x in range(0, self.width):
                 xx = x
-                tileIndex = ((xx >> 3) & 63) + ((yy >> 3) & 63) * 64
-                pixels[x, y] = self.tiles[tileIndex]
-        self.image = pixels.make_surface()
+                tileIndex = ((xx >> 4) & 63) + ((yy >> 4) & 63) * 64
+                self.image[x, y] = self.tiles[tileIndex]
 
 
     def clear(self):
