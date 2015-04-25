@@ -8,17 +8,17 @@ NUM_OF_COLUMNS = 5
 MAP_WIDTH = TILE_SIZE * NUM_OF_COLUMNS
 MAP_HEIGHT = TILE_SIZE * NUM_OF_ROWS
 
-
 class Render(object):
     def __init__(self):
         self.Level = GenLevel(5, 5, 5)
         self.game_window = pygame.display.set_mode((MAP_WIDTH, MAP_HEIGHT))
         self.render()
 
-        print "Initializing Render object: ", (self.Level.level[3][3].neighbours)
+        print "Initializing Render object: ", (self.Level.level[3][3])
 
     def render(self):
-        start_room = self.Level.level[3][3].neighbours
+        #start_room = self.Level.level[3][3].neighbours
+        print(self.Level.level[3][3])
         for row in range(MAP_HEIGHT):
             for column in range(MAP_WIDTH):
 
@@ -26,7 +26,7 @@ class Render(object):
                 pygame.draw.rect(self.game_window, (200, 200, 200),
                                  (column * TILE_SIZE, row * TILE_SIZE,
                                   TILE_SIZE, TILE_SIZE), 25)
-
+"""
         # Draw paths
         for i in range(len(start_room)):
             def draw_path():
@@ -53,5 +53,5 @@ class Render(object):
                     print("No Connection")
 
             draw_path()
-
+"""
 
