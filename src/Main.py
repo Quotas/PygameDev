@@ -4,6 +4,7 @@ from gen.Render import *
 
 
 pygame.init()
+clock = pygame.time.Clock()
 
 def main():
 
@@ -15,6 +16,7 @@ def main():
                 pygame.quit()
                 sys.exit()
 
+        clock.tick(60)
         pygame.display.update()
 
 

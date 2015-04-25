@@ -42,7 +42,7 @@ class Render(object):
                                          TILE_SIZE / 10, TILE_SIZE / 10))
                     elif i == 2:
                         pygame.draw.rect(self.game_window, (222, 23, 23),
-                                         (TILE_SIZE * 2, TILE_SIZE * 3,
+                                         (TILE_SIZE * 2 + TILE_SIZE/2, TILE_SIZE * 3,
                                          TILE_SIZE / 10, TILE_SIZE / 10))
                     elif i == 3:
                         pygame.draw.rect(self.game_window, (222, 23, 23),
