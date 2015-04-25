@@ -1,8 +1,10 @@
 import pygame
-from src.gen.GenLevel import *
-from src.gen.Screen import *
-from src.gen.GenerateLevel import *
+from GenLevel import GenLevel
+from Screen import Screen
+from GenerateLevel import *
 pygame.init()
+
+
 
 
 

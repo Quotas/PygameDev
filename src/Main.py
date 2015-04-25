@@ -1,11 +1,12 @@
-from src.gen.Render import *
-
+from gen.Render import *
+import pygame
 scene = Render()
 clock = pygame.time.Clock()
 
+pygame.init()
 
 def main():
-    pygame.init()
+
     while True:
         scene.render()
         pygame.display.update()

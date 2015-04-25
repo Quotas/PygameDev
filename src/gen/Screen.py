@@ -10,6 +10,7 @@ class Screen(object):
         self.image = np.zeros((width, height)).astype(np.uint32)
         self.tiles = np.random.randint(0, 255 ** 3, 64 * 64)
 
+
     def create_tile_map(self):
         for y in range(0, self.height):
             yy = y
@@ -17,7 +18,6 @@ class Screen(object):
                 xx = x
                 tileIndex = ((xx >> 4) & 63) + ((yy >> 4) & 63) * 64
                 self.image[x, y] = self.tiles[tileIndex]
-
 
     def clear(self):
         pixels = pygame.PixelArray(self.image)
