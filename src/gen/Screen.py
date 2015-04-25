@@ -19,6 +19,9 @@ class Screen(object):
                 tileIndex = ((xx >> 4) & 63) + ((yy >> 4) & 63) * 64
                 self.image[x, y] = self.tiles[tileIndex]
 
+    def update_tile_map(self, offsetX, offsetY):
+        pass
+
     def clear(self):
         pixels = pygame.PixelArray(self.image)
         for i in range(0, len(pixels)):
