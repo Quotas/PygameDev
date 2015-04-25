@@ -14,6 +14,6 @@ class Room(object):
         self.ROOM_CONNECTIONS = {
             TOP: neighbours[0],
             RIGHT: neighbours[1],
-            BOTTOM: neighbours[1],
+            BOTTOM: neighbours[2],
             LEFT: neighbours[3]
         }
