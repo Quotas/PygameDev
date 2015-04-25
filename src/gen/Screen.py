@@ -1,8 +1,8 @@
 import pygame
 from random import randrange
 
-class Screen(object):
 
+class Screen(object):
     def __init__(self, width, height):
         self.width = width
         self.height = height
@@ -11,7 +11,6 @@ class Screen(object):
 
         for i in range(0, len(self.tiles)):
             self.tiles[i] = randrange(0, int("0xffffff", 16))
-
 
 
     def render(self):
