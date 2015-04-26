@@ -2,7 +2,7 @@ import pygame
 from src.gen.GenLevel import GenLevel
 from src.gen.Screen import Screen
 from src.gen.GenerateLevel import *
-pygame.init()
+
 
 
 
@@ -16,6 +16,8 @@ class Render(object):
         self.pixel_data_buffer.create_tile_map()
 
     def render(self):
-        pygame.surfarray.blit_array(self.game_window, self.pixel_data_buffer.image)
+        pygame.surfarray.blit_array(self.game_window, self.pixel_data_buffer.pixels)
         pygame.display.update()
 
+    def clear(self):
+        self.game_window.fill(pygame.Color(0, 0, 0))
