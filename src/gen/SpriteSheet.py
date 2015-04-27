@@ -10,6 +10,9 @@ class SpriteSheet(object):
         self.sprites = pygame.sprite.Group()
 
         self.GRASS_TILE00 = self.create_sprite(0, 0, 32)
+        self.GRASS_TILE01 = self.create_sprite(32, 0, 32)
+        self.GRASS_TILE02 = self.create_sprite(64, 0, 32)
+        self.STONE_TILE00 = self.create_sprite(96, 0, 32)
 
     def create_sprite(self, posx, posy, size):
         pixels = np.zeros(size * size)

@@ -1,5 +1,5 @@
 import pygame
-from random import randrange
+from random import random
 import numpy as np
 from src.gen.SpriteSheet import SpriteSheet
 
@@ -17,7 +17,8 @@ class Screen(object):
             for x in range(0, self.width):
                 xx = x
                 #tileIndex = ((xx >> 4) & 63) + ((yy >> 4) & 63) * 64
-                self.pixels[x, y] = self.sprite_sheet.GRASS_TILE00[(x & 31) + (y & 31) * 32]
+                self.pixels[x, y] = self.sprite_sheet.STONE_TILE00[(x & 31) + (y & 31) * 32].astype(np.uint32)
+
 
     def update_tile_map(self, offsetX, offsetY):
         pass

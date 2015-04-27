@@ -22,7 +22,7 @@ def main():
         scene.clear()
         scene.render()
         frames += 1
-        clock.tick(60)
+        #clock.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()

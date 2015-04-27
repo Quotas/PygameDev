@@ -4,10 +4,6 @@ from src.gen.Screen import Screen
 from src.gen.GenerateLevel import *
 
 
-
-
-
-
 class Render(object):
     def __init__(self):
         self.Level = GenLevel(60, 85, 20, 800, 600)
