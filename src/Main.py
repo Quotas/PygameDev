@@ -9,8 +9,6 @@ clock = pygame.time.Clock()
 
 pygame.init()
 
-
-
 def main():
     current_time = time.clock()
     frames = 0
