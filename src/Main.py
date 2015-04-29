@@ -23,8 +23,8 @@ def main():
         clock.tick(60)
 
         if keys[pygame.K_r]:
-            scene.pixel_data_buffer.randomise_tiles()
-            scene.pixel_data_buffer.create_tile_map()
+            scene.screen.randomise_tiles()
+            scene.screen.create_tile_map()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
