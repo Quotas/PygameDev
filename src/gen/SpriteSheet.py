@@ -25,7 +25,7 @@ class SpriteSheet(object):
             for y in range(0, size):
                 pixels[x + y * size] = (self.sprite_sheet_image_array[x + posx][y + posy] & 0x0000FF) << 16 | (
                     self.sprite_sheet_image_array[x + posx][y + posy] & 0x00FF00) | ( self.sprite_sheet_image_array[x + posx][y + posy] & 0xFF0000) >> 16
-        return pixels
+        return np.array(pixels)
 
     def render_sprite(self, xOffset, yOffset):
         Screen.render_tile()

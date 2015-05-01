@@ -20,8 +20,7 @@ def main():
         time_delta += (current_time - previous_time)
         scene.clear()
         frames += 1
-        clock.tick(60)
-
+        #clock.tick(60)
         if keys[pygame.K_r]:
             scene.screen.randomise_tiles()
             scene.screen.create_tile_map()
